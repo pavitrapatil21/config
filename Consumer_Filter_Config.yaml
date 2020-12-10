@@ -1,0 +1,14 @@
+config:
+  consumer:
+    inclusion:
+      default: consumerType,sources,qaStamped,companyName,fact,emails,gender,spokenLanguageCodes,preferredLanguageCode,vin,dealer,driveDmsCustID,callMe,shareMyInfoFor3rdParty
+      manager: consumerType,dataOwner,fact.consumerName,fact.phone,pii,spokenLanguageCodes,preferredLanguageCode,vin,dealer,driveDmsCustID,callMe,shareMyInfoFor3rdParty
+      finance: dataOwner,qaStamped,fact,pii,emails,gender,vin,dealer,driveDmsCustID,callMe,textMe
+      admin: dataOwner,qaStamped,fact,pii,emails,gender,vin,dealer,driveDmsCustID
+      userInclusion: sources,dataOwner,qaStamped,companyName,fact.consumerName,emails,gender,spokenLanguageCodes,preferredLanguageCode,vin,dealer,driveDmsCustID,callMe,shareMyInfoFor3rdParty
+    exclusion:
+      default: pii,serviceFlexLoopCompanyId,textMe,shareMyInfoForMarketing
+      manager: qaStamped,sources,companyName,emails,gender,fact.address,serviceFlexLoopCompanyId,textMe,shareMyInfoForMarketing
+      finance: consumerType,companyName,spokenLanguageCodes,preferredLanguageCode,shareMyInfoFor3rdParty,shareMyInfoForMarketing,serviceFlexLoopCompanyId
+      admin: sources,companyName,fact.address,serviceFlexLoopCompanyId,textMe,shareMyInfoForMarketing
+      userExclusion: qaStamped,pii,fact
